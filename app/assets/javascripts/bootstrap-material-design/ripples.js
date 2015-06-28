@@ -54,7 +54,6 @@
         return;
       }
 
-
       /**
        * Verify if the current element already has a ripple wrapper element and
        * creates if it doesn't
@@ -63,6 +62,9 @@
         $element.append("<div class=\"ripple-wrapper\"></div>");
       }
 
+      $element.on("touchmove", function() {
+        $element.find(".ripple-wrapper").remove();
+      });
 
       /**
        * Find the ripple wrapper
